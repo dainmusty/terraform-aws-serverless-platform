@@ -8,6 +8,8 @@ module "amplify" {
 
   github_access_token = var.github_access_token
 
+  amplify_service_role = module.iam.amplify_service_role_arn
+
   branch_name = "main"
 
   frontend_build_spec = <<EOF

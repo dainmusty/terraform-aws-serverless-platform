@@ -30,3 +30,8 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "amplify_service_role" {
+  description = "amplify service role"
+  type = string
+}

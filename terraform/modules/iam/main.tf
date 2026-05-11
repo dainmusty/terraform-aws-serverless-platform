@@ -69,3 +69,38 @@ resource "aws_iam_role_policy_attachment" "lambda_policy_attachment" {
   policy_arn = aws_iam_policy.lambda_dynamodb_policy.arn
 }
 
+
+
+# Amplify assume role policy
+data "aws_iam_policy_document" "amplify_assume_role_policy" {
+
+  statement {
+
+    effect = "Allow"
+
+    principals {
+      type        = "Service"
+      identifiers = ["amplify.amazonaws.com"]
+    }
+
+    actions = ["sts:AssumeRole"]
+  }
+}
+
+# IAM role for Amplify service
+resource "aws_iam_role" "amplify_service_role" {
+
+  name = "${var.app_name}-amplify-role"
+
+  assume_role_policy = data.aws_iam_policy_document.amplify_assume_role_policy.json
+
+  tags = var.tags
+}
+
+resource "aws_iam_role_policy_attachment" "amplify_policy_attachment" {
+
+  role = aws_iam_role.amplify_service_role.name
+
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess-Amplify"
+}
+

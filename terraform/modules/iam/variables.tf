@@ -13,3 +13,11 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "app_name" {
+  description = "Application name for Amplify role"
+  type        = string
+  
+}
+
+
