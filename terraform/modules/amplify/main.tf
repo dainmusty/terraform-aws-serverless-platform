@@ -13,17 +13,17 @@ resource "aws_amplify_app" "frontend_application" {
 }
 
 
-# Create Amplify branch for main branch
-resource "aws_amplify_branch" "main_branch" {
+# # Create Amplify branch for main branch
+# resource "aws_amplify_branch" "main_branch" {
 
-  app_id      = aws_amplify_app.frontend_application.id
-  branch_name = var.branch_name
+#   app_id      = aws_amplify_app.frontend_application.id
+#   branch_name = var.branch_name
 
-  framework = "Web"
+#   framework = "Web"
 
-  stage = "PRODUCTION"
+#   stage = "PRODUCTION"
 
-  enable_auto_build = true
-}
+#   enable_auto_build = true
+# }
 
 

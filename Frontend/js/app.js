@@ -3,10 +3,10 @@
  ********************************************/
 
 const GET_API =
-    'https://d25odyyq5pqg0z.execute-api.us-east-1.amazonaws.com/students';
+    'https://d2wci1to7rex4v.execute-api.us-east-1.amazonaws.com/students';
 
 const POST_API =
-    'https://d25odyyq5pqg0z.execute-api.us-east-1.amazonaws.com/students';
+    'https://d2wci1to7rex4v.execute-api.us-east-1.amazonaws.com/students';
 
 
 /********************************************

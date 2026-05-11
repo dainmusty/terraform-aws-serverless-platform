@@ -3,6 +3,11 @@ output "api_gateway_endpoint" {
   value = module.api_gateway.api_gateway_endpoint
 }
 
-output "amplify_app_url" {
-  value = module.amplify.amplify_app_url
+# output "amplify_app_url" {
+#   value = module.amplify.amplify_app_url
+# }
+
+output "amplify_default_domain" {
+  value = module.amplify.amplify_default_domain
 }
+
