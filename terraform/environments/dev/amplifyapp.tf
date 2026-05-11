@@ -32,7 +32,6 @@ frontend:
 
   cache:
     paths: []
-}
 EOF
 
   tags = {
@@ -41,3 +40,4 @@ EOF
     ManagedBy   = "Terraform"
   }
 }
+
