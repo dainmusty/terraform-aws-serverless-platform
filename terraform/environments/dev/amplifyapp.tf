@@ -14,7 +14,8 @@ module "amplify" {
 
   frontend_build_spec = <<EOF
 version: 1
-Frontend:
+
+frontend:
   phases:
     preBuild:
       commands:
@@ -31,6 +32,7 @@ Frontend:
 
   cache:
     paths: []
+}
 EOF
 
   tags = {
