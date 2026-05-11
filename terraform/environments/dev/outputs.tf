@@ -1,0 +1,8 @@
+# Output definitions for dev environment
+output "api_gateway_endpoint" {
+  value = module.api_gateway.api_gateway_endpoint
+}
+
+output "amplify_app_url" {
+  value = module.amplify.amplify_app_url
+}
