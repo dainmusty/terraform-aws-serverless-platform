@@ -14,7 +14,7 @@ module "amplify" {
 
   frontend_build_spec = <<EOF
 version: 1
-frontend:
+Frontend:
   phases:
     preBuild:
       commands:
@@ -25,7 +25,7 @@ frontend:
         - echo "Deploying static frontend"
 
   artifacts:
-    baseDirectory: frontend
+    baseDirectory: Frontend
     files:
       - '**/*'
 
