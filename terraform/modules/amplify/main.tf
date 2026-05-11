@@ -3,7 +3,7 @@ resource "aws_amplify_app" "frontend_application" {
   name         = var.app_name
   repository   = var.github_repository
   access_token = var.github_access_token
-  iam_service_role_arn = var.amplify_service_role
+  # iam_service_role_arn = var.amplify_service_role
 
   build_spec = var.frontend_build_spec
 

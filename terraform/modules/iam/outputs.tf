@@ -8,7 +8,7 @@ output "lambda_role_name" {
   value       = aws_iam_role.lambda_execution_role.name
 }
 
-output "amplify_service_role_arn" {
-  description = "Amplify service role ARN"
-  value       = aws_iam_role.amplify_service_role.arn
-}
+# output "amplify_service_role_arn" {
+#   description = "Amplify service role ARN"
+#   value       = aws_iam_role.amplify_service_role.arn
+# }

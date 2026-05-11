@@ -71,56 +71,56 @@ resource "aws_iam_role_policy_attachment" "lambda_policy_attachment" {
 
 
 
- # IAM role for Amplify service
-resource "aws_iam_role" "amplify_service_role" {
+#  # IAM role for Amplify service
+# resource "aws_iam_role" "amplify_service_role" {
 
-  name = "${var.app_name}-amplify-role"
+#   name = "${var.app_name}-amplify-role"
 
-  assume_role_policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = "sts:AssumeRole"
-        Effect = "Allow"
-        Sid    = ""
-        Principal = {
-          Service = "amplify.amazonaws.com"
-        }
-      },
-    ]
-  })
+#   assume_role_policy = jsonencode({
+#     Version = "2012-10-17"
+#     Statement = [
+#       {
+#         Action = "sts:AssumeRole"
+#         Effect = "Allow"
+#         Sid    = ""
+#         Principal = {
+#           Service = "amplify.amazonaws.com"
+#         }
+#       },
+#     ]
+#   })
 
-  tags = var.tags
-}
-
-
-
-resource "aws_iam_role_policy_attachment" "amplify_policy_attachment" {
-
-  role = aws_iam_role.amplify_service_role.name
-
-  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess-Amplify"
-}
-
-resource "aws_iam_role_policy" "amplify-policy" {
-  name = "${var.app_name}-amplify-policy"
-  role = aws_iam_role.amplify_service_role.id
+#   tags = var.tags
+# }
 
 
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Action = [
-          "logs:CreateLogStream",
-          "logs:PutLogEvents",
-          "logs:CreateLogGroup",
-          "logs:DescribeLogGroups",
-          "codecommit:GitPull"
-        ]
-        Effect   = "Allow"
-        Resource = "*"
-      },
-    ]
-  })
-}
+
+# resource "aws_iam_role_policy_attachment" "amplify_policy_attachment" {
+
+#   role = aws_iam_role.amplify_service_role.name
+
+#   policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess-Amplify"
+# }
+
+# resource "aws_iam_role_policy" "amplify-policy" {
+#   name = "${var.app_name}-amplify-policy"
+#   role = aws_iam_role.amplify_service_role.id
+
+
+#   policy = jsonencode({
+#     Version = "2012-10-17"
+#     Statement = [
+#       {
+#         Action = [
+#           "logs:CreateLogStream",
+#           "logs:PutLogEvents",
+#           "logs:CreateLogGroup",
+#           "logs:DescribeLogGroups",
+#           "codecommit:GitPull"
+#         ]
+#         Effect   = "Allow"
+#         Resource = "*"
+#       },
+#     ]
+#   })
+# }
