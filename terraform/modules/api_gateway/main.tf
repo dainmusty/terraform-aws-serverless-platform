@@ -3,6 +3,23 @@ resource "aws_apigatewayv2_api" "http_api_gateway" {
   name          = var.api_name
   protocol_type = "HTTP"
 
+  cors_configuration {
+
+  allow_origins = ["*"]
+
+  allow_methods = [
+    "GET",
+    "POST",
+    "OPTIONS"
+  ]
+
+  allow_headers = ["*"]
+}
+
+
+
+
+
   tags = var.tags
 }
 
