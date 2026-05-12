@@ -6,7 +6,7 @@ module "get_lambda" {
   lambda_source_path = "../../../lambda/get-function"
 
   runtime = "python3.12"
-  handler = "index.lambda_handler"
+  handler = "GETmethod.lambda_handler"
 
   lambda_role_arn = module.iam.lambda_role_arn
 

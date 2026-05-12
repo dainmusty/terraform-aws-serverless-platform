@@ -6,7 +6,7 @@ module "put_lambda" {
   lambda_source_path = "../../../lambda/put-function"
 
   runtime = "python3.12"
-  handler = "index.lambda_handler"
+  handler = "POSTmethod.lambda_handler"
 
   lambda_role_arn = module.iam.lambda_role_arn
 
