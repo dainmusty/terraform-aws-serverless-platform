@@ -11,24 +11,15 @@ def lambda_handler(event, context):
 
         response = table.scan()
 
-        data = response['Items']
-
-        while 'LastEvaluatedKey' in response:
-            response = table.scan(
-                ExclusiveStartKey=response['LastEvaluatedKey']
-            )
-
-            data.extend(response['Items'])
-
         return {
             'statusCode': 200,
             'headers': {
                 'Access-Control-Allow-Origin': '*'
             },
-            'body': json.dumps(data)
+            'body': json.dumps(response['Items'])
         }
 
-    except Exception as e:
+    except Exception as error:
 
         return {
             'statusCode': 500,
@@ -36,6 +27,6 @@ def lambda_handler(event, context):
                 'Access-Control-Allow-Origin': '*'
             },
             'body': json.dumps({
-                'error': str(e)
+                'error': str(error)
             })
         }
