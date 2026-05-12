@@ -8,8 +8,8 @@ module "amplify" {
 
   github_access_token = var.github_access_token
 
-  get_student_api_url  = "${module.api_gateway.api_gateway_endpoint}/student"
-  post_student_api_url = "${module.api_gateway.api_gateway_endpoint}/student"
+  get_student_api_url  = "${module.api_gateway.api_gateway_endpoint}/students"
+  post_student_api_url = "${module.api_gateway.api_gateway_endpoint}/students"
 
   # amplify_service_role = module.iam.amplify_service_role_arn, will work on it later
 
