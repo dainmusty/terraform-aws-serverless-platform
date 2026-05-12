@@ -11,7 +11,7 @@ module "amplify" {
   get_student_api_url  = "${module.api_gateway.api_gateway_endpoint}/getStudent"
   post_student_api_url = "${module.api_gateway.api_gateway_endpoint}/addStudent"
 
-  # amplify_service_role = module.iam.amplify_service_role_arn
+  # amplify_service_role = module.iam.amplify_service_role_arn, will work on it later
 
   # branch_name = "main"
 
