@@ -31,3 +31,10 @@ variable "tags" {
   default     = {}
 }
 
+variable "get_student_api_url" {
+  type = string
+}
+
+variable "post_student_api_url" {
+  type = string
+}

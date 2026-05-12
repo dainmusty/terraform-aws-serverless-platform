@@ -9,6 +9,13 @@ resource "aws_amplify_app" "frontend_application" {
 
   enable_auto_branch_creation = false
 
+
+  environment_variables = {
+
+  GET_API  = var.get_student_api_url
+  POST_API = var.post_student_api_url
+}
+
   tags = var.tags
 }
 

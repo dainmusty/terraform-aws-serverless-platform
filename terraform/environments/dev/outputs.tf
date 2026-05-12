@@ -11,3 +11,12 @@ output "amplify_default_domain" {
   value = module.amplify.amplify_default_domain
 }
 
+output "get_student_api_url" {
+
+  value = "${module.api_gateway.api_gateway_endpoint}/getStudent"
+}
+
+output "post_student_api_url" {
+
+  value = "${module.api_gateway.api_gateway_endpoint}/addStudent"
+}

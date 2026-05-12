@@ -2,12 +2,8 @@
  ** API ENDPOINTS
  ********************************************/
 
-const GET_API =
-    'https://d2wci1to7rex4v.execute-api.us-east-1.amazonaws.com/students';
-
-const POST_API =
-    'https://d2wci1to7rex4v.execute-api.us-east-1.amazonaws.com/students';
-
+const GET_API = window.GET_API;
+const POST_API = window.POST_API;
 
 /********************************************
  * FETCH STUDENT DATA (unchanged API logic)

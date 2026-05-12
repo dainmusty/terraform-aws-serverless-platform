@@ -8,6 +8,9 @@ module "amplify" {
 
   github_access_token = var.github_access_token
 
+  get_student_api_url  = "${module.api_gateway.api_gateway_endpoint}/getStudent"
+  post_student_api_url = "${module.api_gateway.api_gateway_endpoint}/addStudent"
+
   # amplify_service_role = module.iam.amplify_service_role_arn
 
   # branch_name = "main"
@@ -20,6 +23,8 @@ frontend:
     preBuild:
       commands:
         - echo "Preparing frontend build"
+        - sed -i "s|__GET_API__|$GET_API|g" Frontend/config.js
+        - sed -i "s|__POST_API__|$POST_API|g" Frontend/config.js
 
     build:
       commands:
