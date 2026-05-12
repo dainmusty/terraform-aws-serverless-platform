@@ -23,8 +23,8 @@ frontend:
     preBuild:
       commands:
         - echo "Preparing frontend build"
-        - sed -i "s|__GET_API__|$GET_API|g" Frontend/config.js
-        - sed -i "s|__POST_API__|$POST_API|g" Frontend/config.js
+        - sed -i "s|__GET_API__|$GET_API|g" Frontend/js/config.js
+        - sed -i "s|__POST_API__|$POST_API|g" Frontend/js/config.js
 
     build:
       commands:
