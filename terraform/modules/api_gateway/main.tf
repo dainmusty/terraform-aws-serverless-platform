@@ -15,11 +15,6 @@ resource "aws_apigatewayv2_api" "http_api_gateway" {
 
   allow_headers = ["*"]
 }
-
-
-
-
-
   tags = var.tags
 }
 
