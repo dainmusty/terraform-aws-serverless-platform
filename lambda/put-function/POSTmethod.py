@@ -21,7 +21,7 @@ def lambda_handler(event, context):
 
         response = table.put_item(
             Item={
-                'ID': unique_id,
+                'studentId': unique_id,
                 'roll_number': roll_number,
                 'student_name': student_name,
                 'student_class': student_class,
