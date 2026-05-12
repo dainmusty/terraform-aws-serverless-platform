@@ -17,6 +17,6 @@ module "put_lambda" {
   tags = {
     Environment = "dev"
     Project     = "serverless-platform"
-    ManagedBy   = "Terraform"
+    ManagedBy   = "Terraform team"
   }
 }
