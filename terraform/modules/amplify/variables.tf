@@ -38,3 +38,4 @@ variable "get_student_api_url" {
 variable "post_student_api_url" {
   type = string
 }
+

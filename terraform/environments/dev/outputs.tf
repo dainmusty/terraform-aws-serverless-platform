@@ -13,10 +13,10 @@ output "amplify_default_domain" {
 
 output "get_student_api_url" {
 
-  value = "${module.api_gateway.api_gateway_endpoint}/getStudent"
+  value = "${module.api_gateway.api_gateway_endpoint}/student"
 }
 
 output "post_student_api_url" {
 
-  value = "${module.api_gateway.api_gateway_endpoint}/addStudent"
+  value = "${module.api_gateway.api_gateway_endpoint}/student"
 }
