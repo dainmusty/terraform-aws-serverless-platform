@@ -6,7 +6,7 @@ module "amplify" {
 
   github_repository = "https://github.com/dainmusty/terraform-aws-serverless-platform.git"
 
-  github_access_token = var.github_access_token
+  # github_access_token = var.github_access_token
 
   get_student_api_url  = "${module.api_gateway.api_gateway_endpoint}/students"
   post_student_api_url = "${module.api_gateway.api_gateway_endpoint}/students"
