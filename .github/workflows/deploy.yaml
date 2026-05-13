@@ -134,7 +134,9 @@ jobs:
       - sonarcloud
 
     if: github.event_name == 'pull_request'
-
+    
+    env:
+      TF_VAR_github_access_token: ${{ secrets.TF_VAR_github_access_token }}  
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -173,6 +175,9 @@ jobs:
 
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 
+    env:
+      TF_VAR_github_access_token: ${{ secrets.TF_VAR_github_access_token }} 
+      
     environment:
       name: production
 
