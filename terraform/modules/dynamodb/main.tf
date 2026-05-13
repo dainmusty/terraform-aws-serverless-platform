@@ -22,5 +22,11 @@ resource "aws_dynamodb_table" "serverless_table" {
 
   range_key = var.sort_key
 
+
+#  point_in_time_recovery {
+#   enabled = true
+# }
+
+
   tags = var.tags
 }
