@@ -238,3 +238,6 @@ jobs:
           elif [ "${{ github.event.inputs.terraform_action }}" == "destroy" ]; then
             terraform destroy -auto-approve
           fi
+
+
+          
