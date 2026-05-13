@@ -8,11 +8,11 @@ variable "github_repository" {
   type        = string
 }
 
-# variable "github_access_token" {
-#   description = "GitHub personal access token"
-#   type        = string
-#   sensitive   = true
-# }
+variable "github_access_token" {
+  description = "GitHub personal access token"
+  type        = string
+  sensitive   = true
+}
 
 variable "branch_name" {
   description = "GitHub branch name"
