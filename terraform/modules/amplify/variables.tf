@@ -17,7 +17,7 @@ variable "github_access_token" {
 variable "branch_name" {
   description = "GitHub branch name"
   type        = string
-  default     = "main"
+   
 }
 
 variable "frontend_build_spec" {

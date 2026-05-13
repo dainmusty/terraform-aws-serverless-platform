@@ -13,7 +13,7 @@ module "amplify" {
 
   # amplify_service_role = module.iam.amplify_service_role_arn, will work on it later
 
-  # branch_name = "main"
+  branch_name = "main"
 
   frontend_build_spec = <<EOF
 version: 1
