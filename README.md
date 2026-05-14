@@ -7,15 +7,15 @@
 [![Terraform](https://img.shields.io/badge/Terraform-%E2%9C%A8-lightgrey)](https://www.terraform.io)
 
 
-![AWS Architecture](assets/serverless-architecture.gif)
+![AWS Architecture](infrastructure-architecture/serverless-architecture.gif)
 
-![Frontend UI](assets/frontend-ui.png)
+![Frontend UI](screenshots/frontend-ui.png)
 
-![GitHub Actions Pipeline](assets/github-actions-workflow.png)
+![GitHub Actions Pipeline](screenshots/github-actions-workflow.png)
 
-![DynamoDB Records](assets/dynamodb-records.png)
+![DynamoDB Records](screenshots/dynamodb-records.png)
 
-![Amplify Deployment](assets/amplify-deployment.png)
+![Amplify Deployment](screenshots/amplify-deployment.png)
 
 ---
 
