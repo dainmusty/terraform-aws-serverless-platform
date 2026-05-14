@@ -1,14 +1,21 @@
 # Serverless Student Portal on AWS
 
-![AWS Architecture](assets/serverless-architecture.gif)
+[![LinkedIn](https://img.shields.io/badge/Connect%20with%20me%20on-LinkedIn-blue.svg)](https://www.linkedin.com/in/odainkey-mustapha)
+[![GitHub](https://github.com/dainmusty/terraform-aws-serverless-platform)]
+[![Serverless](https://img.shields.io/badge/Serverless-%E2%9A%A1%EF%B8%8F-blueviolet)](https://www.serverless.com)
+[![AWS](https://img.shields.io/badge/AWS-%F0%9F%9B%A1-orange)](https://aws.amazon.com)
+[![Terraform](https://img.shields.io/badge/Terraform-%E2%9C%A8-lightgrey)](https://www.terraform.io)
 
-![Frontend UI](assets/frontend-ui.png)
 
-![GitHub Actions Pipeline](assets/github-actions-workflow.png)
+![AWS Architecture](infrastructure-architecture/serverless-architecture.gif)
 
-![DynamoDB Records](assets/dynamodb-records.png)
+![Frontend UI](screenshots/frontend-ui.png)
 
-![Amplify Deployment](assets/amplify-deployment.png)
+![GitHub Actions Pipeline](screenshots/github-actions-workflow.png)
+
+![DynamoDB Records](screenshots/dynamodb-records.png)
+
+![Amplify Deployment](screenshots/amplify-deployment.png)
 
 ---
 
