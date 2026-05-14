@@ -13,6 +13,8 @@
 
 ![GitHub Actions Pipeline](screenshots/github-actions-workflow.png)
 
+![GitHub Actions Pipeline Success](screenshots/github-actions-workflow-17-resources-deployed.png)
+
 ![DynamoDB Records](screenshots/dynamodb-records.png)
 
 ![Amplify Deployment](screenshots/amplify-deployment.png)
