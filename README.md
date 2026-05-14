@@ -1,103 +1,461 @@
-# Cloud-Serverless-Project - Full Stack AWS Serverless Project 🚀
+# Serverless Student Portal on AWS
 
-[![LinkedIn](https://img.shields.io/badge/Connect%20with%20me%20on-LinkedIn-blue.svg)](https://www.linkedin.com/in/aman-devops/)
-[![GitHub](https://img.shields.io/github/stars/AmanPathak-DevOps/Awesome-App.svg?style=social)](https://github.com/AmanPathak-DevOps/Awesome-App)
-[![Serverless](https://img.shields.io/badge/Serverless-%E2%9A%A1%EF%B8%8F-blueviolet)](https://www.serverless.com)
-[![AWS](https://img.shields.io/badge/AWS-%F0%9F%9B%A1-orange)](https://aws.amazon.com)
-[![Terraform](https://img.shields.io/badge/Terraform-%E2%9C%A8-lightgrey)](https://www.terraform.io)
+![AWS Architecture](assets/serverless-architecture.png)
 
-Welcome to Awesome App - a full-stack AWS Serverless project showcasing the power of serverless architecture to deploy frontend and backend components seamlessly.
+![Frontend UI](assets/frontend-ui.png)
 
-![AWS Infrastructure Diagram](assets/Serverless.gif)
+![GitHub Actions Pipeline](assets/github-actions-workflow.png)
 
-## Table of Contents
+![DynamoDB Records](assets/dynamodb-records.png)
 
-- [Overview](#overview)
-- [Features](#features)
-- [Folder Structure](#folder-structure)
-- [Getting Started](#getting-started)
-- [Frontend](#frontend)
-- [Backend](#backend)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
+![Amplify Deployment](assets/amplify-deployment.png)
+
+---
+
+# Table of Contents
+
+* [Overview](#overview)
+* [Architecture](#architecture)
+* [AWS Services Used](#aws-services-used)
+* [Features](#features)
+* [Project Structure](#project-structure)
+* [Infrastructure Components](#infrastructure-components)
+* [CI/CD Pipeline](#cicd-pipeline)
+* [Workflow Strategy](#workflow-strategy)
+* [Terraform Highlights](#terraform-highlights)
+* [Security Best Practices Implemented](#security-best-practices-implemented)
+* [Lessons Learned](#lessons-learned)
+* [Future Improvements](#future-improvements)
+* [How to Deploy](#how-to-deploy)
+* [GitHub Secrets Required](#github-secrets-required)
+* [Screenshots](#screenshots)
+* [Author](#author)
+* [Conclusion](#conclusion)
+
+---
 
 ## Overview
 
-Awesome App is a modern, scalable, and serverless application that demonstrates the integration of frontend and backend components on AWS Serverless Services. Leverage the power of AWS Amplify, Lambda, DynamoDB, and API Gateway for a hassle-free deployment experience.
+This project demonstrates a fully serverless student management platform built on AWS using Infrastructure as Code (Terraform), GitHub Actions CI/CD, and DevSecOps best practices.
 
-## Features
+The application allows users to:
 
-- **Serverless Deployment:** Utilize AWS Serverless Services for a scalable and cost-effective deployment.
-- **Full Stack:** Frontend (HTML, CSS, JS) and Backend (Python) seamlessly integrated.
-- **Database:** No SQL Database (DynamoDB) for efficient data storage.
+* Add student records through a web interface
+* Store student data in DynamoDB
+* Retrieve and display student data dynamically
+* Deploy infrastructure automatically using GitHub Actions
+* Host the frontend using AWS Amplify
+* Expose backend services through API Gateway and Lambda
 
-## Folder Structure
+The project follows modular Terraform architecture and modern cloud-native deployment practices.
 
+---
 
-Welcome to Project Name! A [brief description] of your project. Share its purpose, key features, and why it's awesome.
+# Architecture
 
-## Table of Contents 📋
+## High-Level Workflow
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
-  - [Frontend](#frontend)
-  - [Backend](#backend)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+1. User accesses the frontend application hosted on AWS Amplify.
+2. Frontend JavaScript calls API Gateway endpoints.
+3. API Gateway invokes AWS Lambda functions.
+4. Lambda functions interact with DynamoDB.
+5. Student data is stored and retrieved dynamically.
+6. GitHub Actions automates validation, scanning, planning, and deployment.
 
-## Introduction 🌟
+---
 
-Introduce your project in a way that excites readers. What makes it unique and valuable?
+# AWS Services Used
 
-## Features ✨
+## Core Services
 
-Highlight the key features that set your project apart. Use emojis and concise language.
+* AWS Amplify
+* AWS Lambda
+* Amazon API Gateway (HTTP API)
+* Amazon DynamoDB
+* Amazon CloudWatch
+* AWS IAM
 
-- 🎨 Beautiful and responsive UI
-- 💡 Intelligent feature X
-- 🚀 Lightning-fast performance
+## Networking & Security
 
-## Prerequisites 🛠️
+* Amazon Route 53
+* AWS Certificate Manager (ACM)
+* Amazon CloudFront
 
-List any dependencies or tools users need to have before diving into your project.
+## DevOps & Automation
 
+* GitHub Actions
+* Terraform
+* OIDC Federation
 
-## Getting Started
+## DevSecOps Tools
 
-To get started with Awesome App, follow these simple steps:
+* TFLint
+* Checkov
+* SonarCloud
 
-1. Clone the repository: `git clone https://github.com/AmanPathak-DevOps/Cloud-Serverless-Project.git`
-2. Navigate to the `frontend` folder and explore the frontend code.
-3. Check out the `backend` folder for the awesome backend logic.
-4. Customize and adapt the code based on your project requirements.
-5. Deploy the application using the provided deployment guides.
+---
 
-## Frontend
+# Features
 
-The `Frontend` folder contains the HTML, CSS, and JS files responsible for the user interface and client-side functionalities. Customize these files to match your application's design.
+* Fully serverless architecture
+* Terraform modular design
+* GitHub Actions CI/CD pipeline
+* DevSecOps security scanning
+* OIDC authentication for GitHub Actions
+* Automatic Terraform deployments
+* Manual Terraform apply/destroy workflows
+* Production environment approval protection
+* Dynamic frontend API injection
+* Responsive frontend UI
+* DynamoDB integration
+* CloudWatch logging
+* API Gateway routing
+* Secure IAM least privilege model
 
-## Backend
+---
 
-The `Backend` folder houses the backend logic written in Python. This includes Lambda functions that handle server-side processing and interactions with AWS services. Modify these files to tailor the backend to your specific needs.
+# Project Structure
 
-## Deployment
+```text
+terraform/
+├── environments/
+│   └── dev/
+├── modules/
+│   ├── amplify/
+│   ├── api_gateway/
+│   ├── cloudfront/
+│   ├── dynamodb/
+│   ├── iam/
+│   ├── lambda/
+│   ├── route53/
+│   └── acm/
 
-If you want to deploy this project using AWS Serverless Services, refer to the following:
+Frontend/
+├── css/
+├── images/
+├── js/
+├── index.html
+├── config.js
+└── manifest.json
 
-- **Manual Deployment:** Explore the detailed [blog post](#) for step-by-step instructions on manually setting up the project.
+.github/
+└── workflows/
+    └── terraform-ci-cd.yml
+```
 
-- **Terraform Deployment:** For an automated infrastructure-as-code approach, check out the [Terraform repository](https://github.com/AmanPathak-DevOps/Terraform-for-AWS/blob/master/Non-Modularized/AWS-Serverless-Project/) and follow the provided instructions.
+---
 
-## Contributing
+# Infrastructure Components
 
-Contributions are welcome! If you have ideas for improvements, find bugs, or want to add new features, feel free to submit a pull request.
+## Frontend Layer
 
-## License
+### AWS Amplify
 
-This project is licensed under the [MIT License](LICENSE).
-Will be updated.
+Hosts the static frontend application.
+
+### CloudFront
+
+Provides global caching and low latency delivery.
+
+### Route53
+
+Provides DNS management for the custom domain.
+
+### ACM
+
+Provides SSL/TLS certificates for HTTPS.
+
+---
+
+## Backend Layer
+
+### API Gateway
+
+Exposes RESTful HTTP endpoints.
+
+Endpoints:
+
+```text
+GET  /students
+POST /students
+```
+
+### AWS Lambda
+
+Handles backend business logic.
+
+Functions:
+
+* Get student records
+* Add student records
+
+### DynamoDB
+
+Stores student records.
+
+Example item structure:
+
+```json
+{
+  "studentId": "12345",
+  "roll_number": "1",
+  "student_name": "Musty",
+  "student_class": "DevOps"
+}
+```
+
+---
+
+# CI/CD Pipeline
+
+## GitHub Actions Workflow
+
+The CI/CD pipeline performs:
+
+### Code Quality & Security
+
+* TFLint
+* Checkov
+* SonarCloud
+
+### Infrastructure Deployment
+
+* Terraform Init
+* Terraform Plan
+* Terraform Apply
+* Terraform Destroy (manual only)
+
+### Security
+
+* GitHub OIDC authentication
+* IAM role assumption
+* Environment approval protection
+
+---
+
+# Workflow Strategy
+
+## Development Flow
+
+```text
+Developer → dev branch → Security scans → Auto PR → main branch
+```
+
+## Production Deployment Flow
+
+```text
+Merge into main → Terraform Apply → AWS Deployment
+```
+
+## Manual Workflow Support
+
+Supports:
+
+* terraform plan
+* terraform apply
+* terraform destroy
+
+with manual approval protection.
+
+---
+
+# Terraform Highlights
+
+## Modular Architecture
+
+Infrastructure is separated into reusable modules:
+
+* Amplify Module
+* API Gateway Module
+* IAM Module
+* Lambda Module
+* DynamoDB Module
+* CloudFront Module
+* ACM Module
+* Route53 Module
+
+## Benefits
+
+* Reusability
+* Scalability
+* Maintainability
+* Easier troubleshooting
+* Environment consistency
+
+---
+
+# Security Best Practices Implemented
+
+* Least privilege IAM policies
+* OIDC federation instead of static AWS keys
+* GitHub environment protection rules
+* Infrastructure security scanning with Checkov
+* Code quality scanning with SonarCloud
+* Terraform linting with TFLint
+* HTTPS with ACM certificates
+* CloudFront edge protection
+
+---
+
+# Lessons Learned
+
+## Key Takeaways
+
+### 1. IAM Permissions Are Critical
+
+Terraform deployment pipelines require broader permissions than Lambda runtime permissions.
+
+### 2. API Gateway Route Naming Must Match Exactly
+
+Small naming inconsistencies between:
+
+* Terraform routes
+* Lambda handlers
+* Frontend API calls
+
+can break integrations.
+
+### 3. DynamoDB Partition Keys Must Match Lambda Payloads
+
+The DynamoDB schema and Lambda item structure must align perfectly.
+
+### 4. Amplify Build Paths Are Case Sensitive
+
+Frontend folder naming issues caused deployment failures.
+
+### 5. OIDC Is Better Than Static AWS Credentials
+
+GitHub OIDC federation provides a more secure and scalable CI/CD authentication model.
+
+### 6. CloudWatch Logs Are Essential
+
+CloudWatch logs significantly simplified debugging Lambda and API Gateway issues.
+
+### 7. Incremental Troubleshooting Works Best
+
+Breaking down problems layer-by-layer helped isolate issues faster:
+
+* Frontend
+* API Gateway
+* Lambda
+* DynamoDB
+* IAM
+* CI/CD
+
+---
+
+# Future Improvements
+
+Potential enhancements:
+
+* Multi-environment deployments (dev/stage/prod)
+* WAF integration
+* Cognito authentication
+* Terraform remote backend
+* ArgoCD GitOps integration
+* EKS migration
+* Monitoring dashboards with Grafana
+* Prometheus integration
+* Centralized logging
+* Blue/Green deployments
+* Lambda authorizers
+
+---
+
+# How to Deploy
+
+## Prerequisites
+
+* AWS Account
+* Terraform
+* GitHub Repository
+* GitHub Secrets configured
+* OIDC IAM role configured
+
+---
+
+## Clone Repository
+
+```bash
+git clone https://github.com/dainmusty/terraform-aws-serverless-platform.git
+```
+
+---
+
+## Terraform Deployment
+
+```bash
+cd terraform/environments/dev
+
+terraform init
+terraform plan
+terraform apply
+```
+
+---
+
+# GitHub Secrets Required
+
+```text
+AWS_REGION
+TERRAFORM_ROLE_ARN
+SONAR_TOKEN
+```
+
+---
+
+# Screenshots
+
+Recommended screenshots to include:
+
+* Amplify deployment
+* GitHub Actions workflow success
+* DynamoDB entries
+* API Gateway routes
+* CloudWatch logs
+* Frontend UI
+* Terraform apply output
+* SonarCloud results
+* Checkov scans
+
+---
+
+# Author
+
+## Odainkey / Dain Musty
+
+Cloud & DevOps Engineer
+
+Focus Areas:
+
+* AWS Cloud Engineering
+* Terraform
+* Kubernetes
+* DevSecOps
+* CI/CD Automation
+* Serverless Architecture
+* Observability
+* GitOps
+
+GitHub:
+
+[https://github.com/dainmusty](https://github.com/dainmusty)
+
+Medium:
+
+[https://medium.com/@dainmusty](https://medium.com/@dainmusty)
+
+---
+
+# Conclusion
+
+This project demonstrates how modern serverless applications can be deployed securely and automatically using:
+
+* AWS
+* Terraform
+* GitHub Actions
+* DevSecOps tooling
+* OIDC authentication
+* Modular Infrastructure as Code
+
+while following production-oriented cloud engineering practices.
