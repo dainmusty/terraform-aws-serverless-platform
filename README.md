@@ -1,6 +1,6 @@
 # Serverless Student Portal on AWS
 
-![AWS Architecture](assets/serverless-architecture.png)
+![AWS Architecture](assets/serverless-architecture.gif)
 
 ![Frontend UI](assets/frontend-ui.png)
 
@@ -422,7 +422,7 @@ Recommended screenshots to include:
 
 # Author
 
-## Odainkey / Dain Musty
+## Odainkey 
 
 Cloud & DevOps Engineer
 
@@ -440,10 +440,6 @@ Focus Areas:
 GitHub:
 
 [https://github.com/dainmusty](https://github.com/dainmusty)
-
-Medium:
-
-[https://medium.com/@dainmusty](https://medium.com/@dainmusty)
 
 ---
 
