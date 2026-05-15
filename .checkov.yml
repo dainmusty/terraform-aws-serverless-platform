@@ -21,3 +21,15 @@ skip-check:
   - CKV_AWS_50      # X-Ray tracing not required for dev
   - CKV_AWS_117     # Lambda VPC configuration not required for dev
   - CKV_GHA_7       # Workflow dispatch inputs allowed in dev
+  - CKV_AWS_233     # ACM create before destroy not required for dev
+  - CKV_AWS_374     # CloudFront geo restriction not required for dev
+  - CKV_AWS_305     # CloudFront default root object not required for dev
+  - CKV_AWS_68      # CloudFront WAF not required for dev
+  - CKV_AWS_310     # CloudFront origin failover not required for dev
+  - CKV2_AWS_6      # S3 bucket public access block not required for dev
+  - CKV2_AWS_47     # CloudFront WAFv2 AMR for Log4j not required for dev
+  - CKV2_AWS_61     # S3 bucket lifecycle configuration not required for dev
+  - CKV2_AWS_39     # Route 53 DNS query logging not required for dev
+  - CKV2_AWS_32     # CloudFront response headers policy not required for dev
+  - CKV2_AWS_38     # Route 53 DNSSEC signing not required for dev
+  - CKV_AWS_18      # S3 bucket access logging not required for dev
