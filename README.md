@@ -126,30 +126,36 @@ The project follows modular Terraform architecture and modern cloud-native deplo
 # Project Structure
 
 ```text
-terraform/
-├── environments/
-│   └── dev/
-├── modules/
-│   ├── amplify/
-│   ├── api_gateway/
-│   ├── cloudfront/
-│   ├── dynamodb/
-│   ├── iam/
-│   ├── lambda/
-│   ├── route53/
-│   └── acm/
-
-Frontend/
-├── css/
-├── images/
-├── js/
-├── index.html
-├── config.js
-└── manifest.json
-
-.github/
-└── workflows/
-    └── terraform-ci-cd.yml
+terraform-aws-serverless-platform/
+│
+├── Frontend/
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│   ├── config.js
+│   └── index.html
+│
+├── terraform/
+│   ├── environments/
+│   │   ├── shared/
+│   │   └── dev/
+│   │
+│   └── modules/
+│       ├── amplify/
+│       ├── api_gateway/
+│       ├── cloudfront/
+│       ├── dynamodb/
+│       ├── iam/
+│       ├── lambda/
+│       ├── route53/
+│       └── acm/
+│
+├── lambda/
+│   ├── GETmethod.py
+│   └── POSTmethod.py
+│
+└── .github/workflows/
+    └── terraform.yml
 ```
 
 ---
