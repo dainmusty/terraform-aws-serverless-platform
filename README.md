@@ -6,6 +6,7 @@
 [![AWS](https://img.shields.io/badge/AWS-%F0%9F%9B%A1-orange)](https://aws.amazon.com)
 [![Terraform](https://img.shields.io/badge/Terraform-%E2%9C%A8-lightgrey)](https://www.terraform.io)
 
+Welcome to the AWS Serverless Student Registry Platform — a full-stack cloud-native project designed to demonstrate modern serverless architecture on AWS. This project showcases how frontend and backend services can be seamlessly integrated using AWS Amplify, API Gateway, Lambda, DynamoDB, CloudFront, Route53, and Terraform, while implementing CI/CD and DevSecOps best practices with GitHub Actions.
 
 ![AWS Architecture](infrastructure-architecture/serverless-architecture.gif)
 
